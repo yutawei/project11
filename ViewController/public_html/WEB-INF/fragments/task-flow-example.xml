@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="Big5" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-example">
+    <default-activity>dept_flow</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>taskflowBean</managed-bean-name>
+      <managed-bean-class>view.beans.TaskflowBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="dept_flow">
+      <page>/fragments/dept_flow.jsff</page>
+    </view>
+    <router id="router1">
+      <case id="__10">
+        <expression>#{pageFlowScope.taskflowBean.router =="true"}</expression>
+        <outcome>goregion</outcome>
+      </case>
+      <case id="__9">
+        <expression>#{pageFlowScope.taskflowBean.router=="false"}</expression>
+        <outcome>goemp</outcome>
+      </case>
+      <default-outcome>goemp</default-outcome>
+    </router>
+    <view id="empDetail">
+      <page>/fragments/empDetail.jsff</page>
+    </view>
+    <view id="region">
+      <page>/fragments/region.jsff</page>
+    </view>
+    <method-call id="dep_method">
+      <method>#{bindings.dep_method.execute}</method>
+      <outcome>
+        <fixed-outcome>dep_method</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__6">
+      <from-activity-id>router1</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>goregion</from-outcome>
+        <to-activity-id>region</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>goemp</from-outcome>
+        <to-activity-id>empDetail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__2">
+      <from-activity-id>dept_flow</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>go2</from-outcome>
+        <to-activity-id>dep_method</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>dep_method</from-activity-id>
+      <control-flow-case id="__5">
+        <to-activity-id>router1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

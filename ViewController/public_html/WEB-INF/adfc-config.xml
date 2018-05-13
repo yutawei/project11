@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Big5" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="dept">
+    <page>/dept.jsf</page>
+  </view>
+  <view id="task_flow">
+    <page>/task_flow.jsf</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name>deptBean</managed-bean-name>
+    <managed-bean-class>view.beans.DeptBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

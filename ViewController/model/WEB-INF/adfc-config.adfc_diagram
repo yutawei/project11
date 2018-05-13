@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">dept</property>
+      <property
+         name="x">364.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>dept&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">268.29883</property>
+      <property
+         name="page">/dept.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">task_flow</property>
+      <property
+         name="x">544.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>task_flow&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">232.29883</property>
+      <property
+         name="page">/task_flow.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="deptPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartmentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsView1Iterator"/>
+    <iterator Binds="EmployeesView2" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DepartmentsView1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsView1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsView1Iterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsView1Iterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DepartmentsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DepartmentsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DepartmentsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DepartmentsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="EmployeesView2Iterator" id="EmployeesView2">
+      <nodeDefinition DefName="model.view.EmployeesView" Name="EmployeesView20">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="Salary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="dep_method" RequiresUpdateModel="true" Action="invokeMethod" MethodName="dep_method"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="data.AppModuleDataControl.DepartmentsView1"/>
+    <methodAction IterBinding="DepartmentsView1Iterator" id="dep_row_method" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="dep_row_method" IsViewObjectMethod="false"
+                  DataControl="AppModuleDataControl" InstanceName="bindings.DepartmentsView1Iterator.currentRow"
+                  IsLocalObjectReference="true"/>
+    <methodAction IterBinding="DepartmentsView1Iterator" id="dep_method_with_parameter" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="dep_method_with_parameter" IsViewObjectMethod="false"
+                  DataControl="AppModuleDataControl" InstanceName="bindings.DepartmentsView1Iterator.currentRow"
+                  IsLocalObjectReference="true">
+      <NamedData NDName="p1" NDType="java.lang.String" NDOption="2"/>
+      <NamedData NDName="p2" NDType="java.lang.String" NDOption="2"/>
+    </methodAction>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

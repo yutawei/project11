@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="task_flow_example_task_flow_example_dep_methodPageDef" Package="fragments" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="dep_method" RequiresUpdateModel="true" Action="invokeMethod" MethodName="dep_method"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="data.AppModuleDataControl.DepartmentsView1"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="Big5" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="model.am.AppModuleImpl"
+  DefClass="model.am.AppModuleDefImpl">
+  <DesignTime>
+    <Attr Name="_isDefCodegen" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="CountriesView1"
+    ViewObjectName="model.view.CountriesView"/>
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="model.view.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="model.view.EmployeesView"/>
+  <ViewUsage
+    Name="LocationsView1"
+    ViewObjectName="model.view.LocationsView"/>
+  <ViewUsage
+    Name="RegionsView1"
+    ViewObjectName="model.view.RegionsView"/>
+  <ViewUsage
+    Name="TasksView1"
+    ViewObjectName="model.view.TasksView"/>
+  <ViewUsage
+    Name="EmployeesView2"
+    ViewObjectName="model.view.EmployeesView"/>
+  <ViewLinkUsage
+    Name="Dep_emp_vl1"
+    ViewLinkObjectName="model.view.link.Dep_emp_vl"
+    SrcViewUsageName="model.am.AppModule.DepartmentsView1"
+    DstViewUsageName="model.am.AppModule.EmployeesView2"
+    Reversed="false"/>
+</AppModule>

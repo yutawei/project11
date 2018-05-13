@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:table value="#{bindings.RegionsView1.collectionModel}" var="row" rows="#{bindings.RegionsView1.rangeSize}"
+            emptyText="#{bindings.RegionsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            rowBandingInterval="0" selectedRowKeys="#{bindings.RegionsView1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.RegionsView1.collectionModel.makeCurrent}" rowSelection="single"
+            fetchSize="#{bindings.RegionsView1.rangeSize}" id="t1">
+    <af:column headerText="#{bindings.RegionsView1.hints.RegionId.label}" id="c1">
+      <af:inputText value="#{row.bindings.RegionId.inputValue}" label="#{bindings.RegionsView1.hints.RegionId.label}"
+                    required="#{bindings.RegionsView1.hints.RegionId.mandatory}"
+                    columns="#{bindings.RegionsView1.hints.RegionId.displayWidth}"
+                    maximumLength="#{bindings.RegionsView1.hints.RegionId.precision}"
+                    shortDesc="#{bindings.RegionsView1.hints.RegionId.tooltip}" id="it1">
+        <f:validator binding="#{row.bindings.RegionId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.RegionsView1.hints.RegionId.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.RegionsView1.hints.RegionName.label}" id="c2">
+      <af:inputText value="#{row.bindings.RegionName.inputValue}"
+                    label="#{bindings.RegionsView1.hints.RegionName.label}"
+                    required="#{bindings.RegionsView1.hints.RegionName.mandatory}"
+                    columns="#{bindings.RegionsView1.hints.RegionName.displayWidth}"
+                    maximumLength="#{bindings.RegionsView1.hints.RegionName.precision}"
+                    shortDesc="#{bindings.RegionsView1.hints.RegionName.tooltip}" id="it2">
+        <f:validator binding="#{row.bindings.RegionName.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column headerText="#{bindings.RegionsView1.hints.RegionCode.label}" id="c3">
+      <af:inputText value="#{row.bindings.RegionCode.inputValue}"
+                    label="#{bindings.RegionsView1.hints.RegionCode.label}"
+                    required="#{bindings.RegionsView1.hints.RegionCode.mandatory}"
+                    columns="#{bindings.RegionsView1.hints.RegionCode.displayWidth}"
+                    maximumLength="#{bindings.RegionsView1.hints.RegionCode.precision}"
+                    shortDesc="#{bindings.RegionsView1.hints.RegionCode.tooltip}" id="it3">
+        <f:validator binding="#{row.bindings.RegionCode.validator}"/>
+      </af:inputText>
+    </af:column>
+  </af:table>
+</ui:composition>
