@@ -1,5 +1,5 @@
 package view.beans;
-//version5
+//version6
 public class TaskflowBean {
     public String router;
     public TaskflowBean() {
