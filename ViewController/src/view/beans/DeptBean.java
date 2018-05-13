@@ -29,7 +29,7 @@ import oracle.jbo.Row;
 import oracle.jbo.RowSetIterator;
 
 import org.apache.myfaces.trinidad.model.RowKeySet;
-//version1
+//version3
 public class DeptBean {
     private RichTable empTab;
     private RichInputText depName;
