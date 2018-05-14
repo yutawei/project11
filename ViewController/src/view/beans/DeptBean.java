@@ -38,7 +38,7 @@ public class DeptBean {
     }
 
 
-    //version9
+    //version10
 
     public String methodBinding() {
         // get the binding container
