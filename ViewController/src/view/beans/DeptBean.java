@@ -36,7 +36,10 @@ public class DeptBean {
 
     public DeptBean() {
     }
-    //version9
+
+
+    //version8
+
     public String methodBinding() {
         // get the binding container
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
