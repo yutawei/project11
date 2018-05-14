@@ -1,10 +1,10 @@
 package view.beans;
-//version6
+//version7
 public class TaskflowBean {
     public String router;
     public TaskflowBean() {
     }
-
+    //version7
     public String go1() {
         // Add event code here...
         return "gorouter1";

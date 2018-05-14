@@ -29,14 +29,14 @@ import oracle.jbo.Row;
 import oracle.jbo.RowSetIterator;
 
 import org.apache.myfaces.trinidad.model.RowKeySet;
-//version6
+//version7
 public class DeptBean {
     private RichTable empTab;
     private RichInputText depName;
 
     public DeptBean() {
     }
-
+    //version7
     public String methodBinding() {
         // get the binding container
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
